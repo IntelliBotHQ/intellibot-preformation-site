@@ -63,6 +63,7 @@ sitemap.xml
 README.md
 GITHUB_PAGES_DEPLOYMENT_CHECKLIST.md
 PUBLICATION_SAFETY_MANIFEST.md
+WEBSITE_V5_PRODUCT_ROADMAP_UPDATE_NOTES.md
 ```
 
 ## GitHub Pages settings
@@ -84,3 +85,7 @@ Preserve all Microsoft 365 email records and the existing GitHub organization-do
 ## Development restriction
 
 No beta form, optional analytics, investor funnel, trading functionality, or commercial workflow should be added to this interim public site until the applicable governance and legal review gates are satisfied.
+
+## V5 Product/Roadmap Update
+
+This package updates the Product and Roadmap pages to replace generic placeholder language with professional, detailed, public-safe product and roadmap content aligned to the current TT-169 V2.8 product direction.
