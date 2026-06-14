@@ -1,0 +1,8 @@
+Replace the files in this package over the current GitHub Pages repo.
+
+This update removes prototype UI images from homepage and Product page only.
+All concept UI images remain on /interface/.
+
+No logo/icon/CSS files are changed by this update.
+If still present from the invalid V8 attempts, delete:
+- assets/intellibot-shield-badge-tt169-v8.png

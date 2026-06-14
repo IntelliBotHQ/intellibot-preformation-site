@@ -82,23 +82,15 @@ Publication-safety treatment:
 - The new interface page is a product-direction gallery, not a commercial availability or investment-solicitation page.
 
 
-## V8 badge alignment update
+## V7.1 interface-gallery consolidation update
 
-The public website badge has been updated to align the homepage/header branding with the latest supplied concept UI images.
-
-Updated/added publication assets:
-
-- `assets/intellibot-shield-badge-tt169-v8.png`
-- `assets/favicon.png`
-- `assets/icon-192.png`
-
-Removed from active V8 package:
-
-- `assets/intellibot-emblem.png`
+Prototype interface imagery has been consolidated to the dedicated `/interface/` page.
 
 Publication-safety determination:
 
-- The badge is a cropped reuse of user-supplied concept imagery.
-- No additional image generation was performed.
-- The public site still uses IntelliBot only and no corporate suffix.
-- The update does not add beta enrollment, analytics, investor solicitation, performance claims, product download, live trading access, or credential collection.
+- Homepage prototype imagery removed.
+- Product-page prototype imagery removed.
+- Interface-page prototype imagery retained.
+- Prototype imagery remains concept-only and illustrative.
+- No logo, icon, CSS, DNS, beta signup, analytics, investor funnel, product download, credential collection, or live trading access was added.
+- Correct Website V7 logo/CSS assets remain active.
