@@ -59,3 +59,24 @@ Publication-safety treatment:
 - Performance-like areas in the dashboard concept are partially de-emphasized.
 - Captions state that the images are not live product screenshots, beta screenshots, live data, performance evidence, trading recommendations, or expected outcomes.
 - The Disclosures page includes a dedicated concept-imagery disclosure row.
+
+
+## V7 robust concept UI gallery update
+
+This package includes seven current concept UI preview assets:
+
+- `assets/concept-ui-dashboard.png`
+- `assets/concept-ui-live-trading.png`
+- `assets/concept-ui-strategies.png`
+- `assets/concept-ui-backtesting.png`
+- `assets/concept-ui-risk-center.png`
+- `assets/concept-ui-reporting.png`
+- `assets/concept-ui-settings.png`
+
+Publication-safety treatment:
+
+- Images are already marked as concept UI preview / illustrative only.
+- Website copy reiterates that the images are not live software, beta screenshots, trading data, account data, backtest evidence, performance proof, trading recommendations, or expected outcomes.
+- The public site remains pre-formation and informational only.
+- No beta signup, analytics, product download, investor funnel, offering terms, or live trading access has been added.
+- The new interface page is a product-direction gallery, not a commercial availability or investment-solicitation page.

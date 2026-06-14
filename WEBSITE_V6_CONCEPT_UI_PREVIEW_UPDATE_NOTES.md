@@ -28,7 +28,7 @@ Add a publication-safe concept UI preview section to the current GitHub Pages we
 
 The concept imagery is clearly identified as illustrative only. The update preserves the current pre-formation publication boundary:
 
-- No `IntelliBot, Inc.` representation.
+- No public corporate-suffix representation.
 - No active beta enrollment.
 - No analytics or tracking pixels.
 - No investor solicitation.

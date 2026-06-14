@@ -105,3 +105,20 @@ The images are marked and captioned as:
 - subject to change.
 
 This update does not activate beta enrollment, analytics, investor solicitation, product downloads, or any commercial workflow.
+
+
+## V7 robust concept UI gallery update
+
+This package updates the public GitHub Pages website with a fuller concept UI gallery based on the current TT-169 / V2.8 interface direction images supplied by the project owner.
+
+New public-facing additions:
+
+- Dedicated `/interface/` concept gallery page.
+- Homepage interface showcase using the updated dashboard, live-trading, backtesting, and risk-center concept panels.
+- Product-page gallery covering Dashboard, Live Trading, Strategies, Backtesting, Risk Center, Reporting, and Settings.
+- Expanded disclosure language covering all concept interface imagery.
+- Updated sitemap entry for `/interface/`.
+
+Publication boundary:
+
+The concept images are included to communicate product direction and planned interface robustness. They are not live software, beta screenshots, live trading data, account records, backtest evidence, performance evidence, or product-readiness evidence.
