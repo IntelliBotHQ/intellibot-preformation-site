@@ -354,3 +354,64 @@ footer { border-top:1px solid var(--line); margin-top:45px; padding:34px 0; colo
     grid-column: auto;
   }
 }
+/* V8.1 mobile logo rendering fix
+   Purpose:
+   - Prevent the shield/check badge from being cropped or distorted in the mobile header.
+   - Keep the homepage hero badge contained inside the card on narrow screens.
+   - Preserve the current V8 badge asset and all publication-safety language.
+*/
+.brand {
+  min-width: 0;
+  flex-shrink: 1;
+}
+.brand img {
+  flex: 0 0 auto;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 0;
+  background: transparent;
+}
+.brand span {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.logo-card img {
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+}
+
+@media (max-width: 600px) {
+  .nav-shell {
+    gap: 12px;
+  }
+  .brand {
+    gap: 9px;
+    font-size: 1.08rem;
+    max-width: calc(100% - 58px);
+  }
+  .brand img {
+    width: 36px;
+    height: 36px;
+  }
+  .logo-card img {
+    width: min(72vw, 230px);
+    height: auto;
+    max-height: none;
+    border-radius: 0;
+  }
+  .wordmark {
+    font-size: 1.85rem;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand {
+    font-size: 1rem;
+  }
+  .brand img {
+    width: 34px;
+    height: 34px;
+  }
+}
