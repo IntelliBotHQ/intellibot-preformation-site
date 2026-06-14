@@ -80,3 +80,25 @@ Publication-safety treatment:
 - The public site remains pre-formation and informational only.
 - No beta signup, analytics, product download, investor funnel, offering terms, or live trading access has been added.
 - The new interface page is a product-direction gallery, not a commercial availability or investment-solicitation page.
+
+
+## V8 badge alignment update
+
+The public website badge has been updated to align the homepage/header branding with the latest supplied concept UI images.
+
+Updated/added publication assets:
+
+- `assets/intellibot-shield-badge-tt169-v8.png`
+- `assets/favicon.png`
+- `assets/icon-192.png`
+
+Removed from active V8 package:
+
+- `assets/intellibot-emblem.png`
+
+Publication-safety determination:
+
+- The badge is a cropped reuse of user-supplied concept imagery.
+- No additional image generation was performed.
+- The public site still uses IntelliBot only and no corporate suffix.
+- The update does not add beta enrollment, analytics, investor solicitation, performance claims, product download, live trading access, or credential collection.

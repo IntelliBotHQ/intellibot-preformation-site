@@ -122,3 +122,16 @@ New public-facing additions:
 Publication boundary:
 
 The concept images are included to communicate product direction and planned interface robustness. They are not live software, beta screenshots, live trading data, account records, backtest evidence, performance evidence, or product-readiness evidence.
+
+
+## V8 badge alignment update
+
+This package supersedes V7 for the public website repository.
+
+The main site brand badge has been updated to match the current TT-169 / V2.8 concept UI direction. The old robot/candlestick emblem was removed from active references and replaced with:
+
+- `assets/intellibot-shield-badge-tt169-v8.png`
+- updated `assets/favicon.png`
+- updated `assets/icon-192.png`
+
+The new badge was cropped from the user-supplied concept UI images and is used only as public-facing brand/interface alignment material. No new image generation was performed.
