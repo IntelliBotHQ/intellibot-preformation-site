@@ -89,3 +89,19 @@ No beta form, optional analytics, investor funnel, trading functionality, or com
 ## V5 Product/Roadmap Update
 
 This package updates the Product and Roadmap pages to replace generic placeholder language with professional, detailed, public-safe product and roadmap content aligned to the current TT-169 V2.8 product direction.
+
+## V6 concept UI preview update
+
+This package adds publication-safe concept UI preview assets to the Home and Product pages.
+
+The images are marked and captioned as:
+
+- concept UI preview;
+- illustrative only;
+- not live software;
+- not live trading data;
+- not beta screenshots;
+- not performance evidence;
+- subject to change.
+
+This update does not activate beta enrollment, analytics, investor solicitation, product downloads, or any commercial workflow.

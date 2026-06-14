@@ -253,3 +253,58 @@ footer { border-top:1px solid var(--line); margin-top:45px; padding:34px 0; colo
   .timeline-marker { width:42px; height:42px; }
   .timeline-content { padding:18px; }
 }
+
+/* V6 concept UI preview additions */
+.visual-panel {
+  overflow: hidden;
+  padding: 0;
+}
+.visual-panel img,
+.concept-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.visual-caption {
+  padding: 18px 20px 20px;
+  color: var(--muted);
+  font-size: .95rem;
+  border-top: 1px solid var(--line);
+  background: rgba(2, 8, 22, .58);
+}
+.concept-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.22fr) minmax(280px, .78fr);
+  gap: 18px;
+  align-items: start;
+}
+.concept-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: #c5f6ff;
+  border: 1px solid rgba(19,217,255,.32);
+  background: rgba(19,217,255,.08);
+  border-radius: 999px;
+  padding: 7px 11px;
+  font-size: .78rem;
+  text-transform: uppercase;
+  letter-spacing: .11em;
+  margin-bottom: 14px;
+}
+.concept-disclaimer {
+  border: 1px solid rgba(255,200,92,.35);
+  background: rgba(255,200,92,.08);
+  color: #e9d5a9;
+  border-radius: 15px;
+  padding: 16px 18px;
+  margin-top: 16px;
+}
+.image-stack {
+  display: grid;
+  gap: 18px;
+}
+@media (max-width: 900px) {
+  .concept-grid { grid-template-columns: 1fr; }
+  .visual-caption { padding: 15px 16px 17px; }
+}

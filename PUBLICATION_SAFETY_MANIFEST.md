@@ -45,3 +45,17 @@ Schema hardening, audit readiness, migration readiness, and database integrity l
 ## Language verification
 
 The public pages state that IntelliBot is a pre-formation product initiative in development, do not represent a released trading product, do not solicit an investment, do not claim performance, and do not accept beta enrollment at this interim stage.
+
+## V6 concept UI image update
+
+This package includes two sanitized concept UI preview assets:
+
+- `assets/interface-concept-dashboard.jpg`
+- `assets/interface-concept-risk-panel.jpg`
+
+Publication-safety treatment:
+
+- Images are watermarked as concept / illustrative previews.
+- Performance-like areas in the dashboard concept are partially de-emphasized.
+- Captions state that the images are not live product screenshots, beta screenshots, live data, performance evidence, trading recommendations, or expected outcomes.
+- The Disclosures page includes a dedicated concept-imagery disclosure row.
