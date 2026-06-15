@@ -94,3 +94,18 @@ Publication-safety determination:
 - Prototype imagery remains concept-only and illustrative.
 - No logo, icon, CSS, DNS, beta signup, analytics, investor funnel, product download, credential collection, or live trading access was added.
 - Correct Website V7 logo/CSS assets remain active.
+
+
+## V7.2 professional overhaul publication-safety note
+
+V7.2 improves website presentation and gallery functionality while preserving the public-compliance perimeter.
+
+Publication-safety determination:
+
+- Prototype images remain restricted to `/interface/`.
+- Prototype images remain concept-only and illustrative.
+- Interface lightbox uses local JavaScript only and does not add analytics, tracking, form capture, or third-party dependencies.
+- Public copy continues to state that the site is pre-formation and informational.
+- No beta signup, investor solicitation, financing terms, product download, credential collection, live trading access, performance claims, or corporate suffix was added.
+- Correct public logo files remain `assets/intellibot-emblem.png`, `assets/favicon.png`, and `assets/icon-192.png`.
+- Interface image mockups were updated for internal visual consistency using the approved IntelliBot emblem treatment.

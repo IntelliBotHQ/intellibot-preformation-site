@@ -131,3 +131,22 @@ This package supersedes Website V7 for public website deployment while preservin
 V7.1 consolidates prototype/user-interface images into the dedicated `/interface/` page only. The homepage and Product page now use text-only interface callouts that direct visitors to the Interface Gallery.
 
 No logo, icon, CSS, DNS, GitHub Pages setting, beta, analytics, investor, product-download, or live-trading-access change was made.
+
+
+## V7.2 professional overhaul update
+
+This package supersedes Website V7.1 for public website deployment.
+
+V7.2 keeps GitHub Pages static hosting, but upgrades the presentation layer with richer semantic HTML, professional card/timeline layouts, improved copy, hover effects, and a local JavaScript interface-gallery lightbox.
+
+Key changes:
+
+- Professional homepage copy and control-stack presentation.
+- Product page rewritten around the operating model rather than repeated interface visuals.
+- Interface page upgraded with click-to-enlarge image previews.
+- Roadmap page converted into a phase-gated timeline.
+- Trust page converted into safety-architecture cards.
+- Disclosures page converted from table-style presentation into disclosure cards.
+- Contact page clarified as a general contact channel only.
+- Interface images updated so the embedded upper-left brand treatment uses the approved IntelliBot emblem direction.
+- No logo asset replacement, favicon replacement, DNS change, beta signup, analytics, investor funnel, product download, or live trading access was added.

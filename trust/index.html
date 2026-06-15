@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trust and Safety | IntelliBot</title>
-<meta name="description" content="IntelliBot trust and safety information.">
+<title>Trust & Safety | IntelliBot</title>
+<meta name="description" content="IntelliBot trust and safety principles for risk-first crypto automation.">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -29,13 +29,42 @@
     </div>
   </nav>
 </header>
+<main>
+<section class="page-head">
+  <div class="wrap">
+    <span class="chip">Trust &amp; Safety · Product direction</span>
+    <h1>Safety is not a footer. It is the <span>operating model</span>.</h1>
+    <p class="lead">IntelliBot is being scoped around deterministic boundaries: no custody, no withdrawals, one-active-trade control, sandbox-first validation, and advisory intelligence that cannot override risk systems.</p>
+  </div>
+</section>
 
-<main><section class="page-head"><div class="wrap"><span class="chip">Trust &amp; safety</span><h1>Safety boundaries are part of the <span>product</span>.</h1><p class="lead">IntelliBot is designed around constraints that reduce unnecessary risk and make decisions reviewable.</p></div></section>
-<section><div class="wrap grid two">
-<div class="panel"><h2>Planned product safeguards</h2><ul class="clean"><li>Non-custodial direction and no pooled capital.</li><li>No withdrawal permissions in the intended configuration.</li><li>Mandatory safety controls and explicit arming before live activity.</li><li>Backtest and sandbox evidence before live eligibility.</li><li>Secret-redacted, accountable lifecycle reconstruction as a design objective.</li></ul></div>
-<div class="panel"><h2>Never send secrets through this site</h2><p>Do not email or submit exchange API keys, API secrets, authentication tokens, wallet private keys, recovery phrases, or passwords to IntelliBot through this website or by email.</p><div class="notice"><strong>Security status:</strong> Credential protection and audit-readiness features are development requirements, not claims of deployed production security or regulatory certification.</div></div>
-</div></section></main>
+<section>
+ <div class="wrap">
+  <div class="safety-grid">
+   <article><span>No custody</span><h3>User-controlled accounts</h3><p>The intended product does not hold user funds or operate pooled accounts.</p></article>
+   <article><span>No withdrawals</span><h3>Trading permission only</h3><p>The intended API posture excludes withdrawal authority.</p></article>
+   <article><span>One active trade</span><h3>Constrained exposure</h3><p>The default design keeps active exposure narrow and easier to supervise.</p></article>
+   <article><span>Sandbox first</span><h3>Validation before live</h3><p>Sandbox and proof gates precede any live-capital eligibility.</p></article>
+   <article><span>Risk controls</span><h3>Deterministic guardrails</h3><p>Drawdown, cooldown, and safety controls are planned as hard gates.</p></article>
+   <article><span>AI advisory only</span><h3>No override authority</h3><p>AI/news/sentiment context cannot open trades, raise risk, or bypass safety systems.</p></article>
+  </div>
+ </div>
+</section>
 
+<section>
+ <div class="wrap split-panel">
+  <div>
+   <div class="kicker">Credential posture</div>
+   <h2>API safety is part of product design.</h2>
+   <p>The intended product direction is to keep exchange credentials close to the user, restrict permissions, verify account selection, and prevent high-risk permission scopes from becoming part of the workflow.</p>
+  </div>
+  <div class="panel elevated">
+   <h3>Public-site boundary</h3>
+   <p>No API keys, wallet keys, exchange credentials, or account access are collected through this website.</p>
+  </div>
+ </div>
+</section>
+</main>
 <footer>
  <div class="wrap footer-grid">
   <div>
