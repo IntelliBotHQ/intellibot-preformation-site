@@ -653,7 +653,28 @@ footer { border-top:1px solid var(--line); margin-top:45px; padding:34px 0; colo
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
 }
+
+/* V7.2.2 defect hardening: keep every interface-gallery card uniform. */
+.gallery-enhanced .visual-panel,
+.gallery-enhanced .gallery-feature {
+  grid-column: auto !important;
+}
+.gallery-enhanced .gallery-trigger,
+.gallery-enhanced .concept-image {
+  width: 100%;
+}
+
 /* V7.3 rebuilt interface image hardening: SVG gallery assets render uniformly. */
+.gallery-enhanced .visual-panel,
+.gallery-enhanced .gallery-feature {
+  grid-column: auto !important;
+}
+.gallery-enhanced .concept-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
+/* V7.4 user-supplied interface image hardening: gallery assets render uniformly. */
 .gallery-enhanced .visual-panel,
 .gallery-enhanced .gallery-feature {
   grid-column: auto !important;

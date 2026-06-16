@@ -114,6 +114,31 @@ Publication-safety determination:
 
 V7.2.1 corrects presentation defects only: the wide logo overlay in concept UI images was removed; only the small upper-left icon area was corrected; all Interface Gallery thumbnails now display uniformly. No CSS, public logo, favicon, icon, DNS, analytics, beta, investor funnel, product download, live trading access, credential collection, or performance claim was added.
 
+
+## V7.2.2 interface logo image defect correction
+
+V7.2.2 is a defect-correction update only.
+
+Publication-safety determination:
+
+- Prototype images remain restricted to `/interface/`.
+- Prototype images remain concept-only and illustrative.
+- The interface mockup logo treatment was corrected inside the image assets for visual consistency.
+- The public logo file itself was not changed.
+- No analytics, forms, third-party scripts, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.
+
+
 ## V7.3 rebuilt interface mockups publication-safety note
 
-V7.3 is a visual consistency and branding-defect correction. Prototype images remain restricted to `/interface/`; no analytics, forms, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.
+V7.3 is a visual consistency and branding-defect correction.
+
+Publication-safety determination:
+
+- Prototype images remain restricted to `/interface/`.
+- Prototype images remain concept-only and illustrative.
+- Rebuilt SVG mockups use the approved IntelliBot emblem treatment consistently.
+- No analytics, forms, third-party scripts, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.
+
+## V7.4 user-supplied interface mockup restoration publication-safety note
+
+V7.4 is a visual restoration and consistency correction. Prototype images remain restricted to `/interface/`; no analytics, forms, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.
