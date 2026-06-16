@@ -154,3 +154,7 @@ Key changes:
 ## V7.2.1 interface image defect correction
 
 This package supersedes Website V7.2 for public website deployment. It removes the wide logo overlay/label treatment from concept UI images, rebuilds the mockups from the V7.1 source images, limits the correction to the small upper-left icon area, and standardizes the Interface Gallery so all thumbnails display at the same size before enlargement.
+
+## V7.3 rebuilt interface mockups
+
+Website V7.3 supersedes V7.2.2 for public website deployment. V7.3 replaces the previous patched PNG concept UI mockups with rebuilt SVG mockups. The Interface page references the rebuilt SVG assets for both thumbnail and enlarged modal views using `?v=7.3.0`.

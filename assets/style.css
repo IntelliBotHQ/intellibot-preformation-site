@@ -653,3 +653,13 @@ footer { border-top:1px solid var(--line); margin-top:45px; padding:34px 0; colo
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
 }
+/* V7.3 rebuilt interface image hardening: SVG gallery assets render uniformly. */
+.gallery-enhanced .visual-panel,
+.gallery-enhanced .gallery-feature {
+  grid-column: auto !important;
+}
+.gallery-enhanced .concept-image {
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  object-position: center;
+}
