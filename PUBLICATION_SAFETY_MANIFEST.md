@@ -109,3 +109,7 @@ Publication-safety determination:
 - No beta signup, investor solicitation, financing terms, product download, credential collection, live trading access, performance claims, or corporate suffix was added.
 - Correct public logo files remain `assets/intellibot-emblem.png`, `assets/favicon.png`, and `assets/icon-192.png`.
 - Interface image mockups were updated for internal visual consistency using the approved IntelliBot emblem treatment.
+
+## V7.2.1 interface image defect correction
+
+V7.2.1 corrects presentation defects only: the wide logo overlay in concept UI images was removed; only the small upper-left icon area was corrected; all Interface Gallery thumbnails now display uniformly. No CSS, public logo, favicon, icon, DNS, analytics, beta, investor funnel, product download, live trading access, credential collection, or performance claim was added.

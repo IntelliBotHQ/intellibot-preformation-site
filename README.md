@@ -150,3 +150,7 @@ Key changes:
 - Contact page clarified as a general contact channel only.
 - Interface images updated so the embedded upper-left brand treatment uses the approved IntelliBot emblem direction.
 - No logo asset replacement, favicon replacement, DNS change, beta signup, analytics, investor funnel, product download, or live trading access was added.
+
+## V7.2.1 interface image defect correction
+
+This package supersedes Website V7.2 for public website deployment. It removes the wide logo overlay/label treatment from concept UI images, rebuilds the mockups from the V7.1 source images, limits the correction to the small upper-left icon area, and standardizes the Interface Gallery so all thumbnails display at the same size before enlargement.
