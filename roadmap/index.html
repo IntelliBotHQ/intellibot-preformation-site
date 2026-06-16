@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Roadmap | IntelliBot</title>
-<meta name="description" content="IntelliBot roadmap for pre-formation product initiative in development.">
+<meta name="description" content="Phase-gated IntelliBot roadmap from Phase 0 through Phase 7 for a pre-formation product initiative in development.">
 <link rel="icon" href="../assets/favicon.png">
 <link rel="stylesheet" href="../assets/style.css">
 </head>
@@ -32,38 +32,141 @@
 <main>
 <section class="page-head">
   <div class="wrap">
-    <span class="chip">Roadmap · Phase-gated · Not a product release schedule</span>
+    <span class="chip">Roadmap · Phase 0–7 · Phase-gated · Not a release schedule</span>
     <h1>Roadmap discipline: <span>prove the system before expanding the system</span>.</h1>
-    <p class="lead">The roadmap is intentionally gated. IntelliBot should not move toward live operation, beta enrollment, analytics, provider integrations, or commercial workflows until the relevant security, schema, QA, and compliance gates are satisfied.</p>
+    <p class="lead">The IntelliBot roadmap is intentionally gated from Phase 0 through Phase 7. Each phase must satisfy its own engineering, risk, security, QA, and governance checks before the project can move toward broader access, live-capital workflows, beta enrollment, commercialization, or funding-pathway activity.</p>
   </div>
 </section>
 
 <section>
  <div class="wrap">
+  <div class="section-heading">
+    <div class="kicker">Current roadmap authority</div>
+    <h2>Eight public roadmap phases, with <span>clear gating</span>.</h2>
+    <p>This restores the detailed Phase 0–7 structure while keeping the cleaner visual presentation. The roadmap is directional and phase-gated; it is not a promise of product availability, trading performance, beta access, or investment opportunity.</p>
+  </div>
+
   <div class="roadmap-lane">
+
     <article class="roadmap-card current">
       <div class="phase-index">0</div>
-      <div><span class="tag">Current</span><h3>Phase 0 · TPMS and schema-readiness control</h3><p>TT169 / V2.8 remains the governing baseline for migration readiness, one-active-trade enforcement, drawdown persistence, proof placeholders, and stale metadata cleanup.</p></div>
+      <div>
+        <span class="tag">Current · TT-169 V2.8 authority</span>
+        <h3>Phase 0 · Governance, architecture, and clean foundation</h3>
+        <p>Establish the authoritative TPMS baseline, product boundaries, schema-readiness requirements, and disciplined implementation controls before runtime work expands.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>STATUS.md ticket authority</li><li>TT-169 V2.8 schema-readiness baseline</li><li>UI authority and retired page cleanup</li><li>Codex Plan-mode discipline</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>No superseded package may control scope</li><li>No implementation outside approved phase</li><li>No live-capital, beta, or commercialization activity</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Runtime implementation without gate approval</li><li>Provider integration or API-key acquisition</li><li>Public beta or investor workflow activation</li></ul></div>
+        </div>
+      </div>
     </article>
+
     <article class="roadmap-card">
       <div class="phase-index">1</div>
-      <div><span class="tag">Next only after gates</span><h3>Phase 1 · Controlled implementation readiness</h3><p>Runtime work remains dependent on TPMS authority, Codex Plan-mode control, dependency governance, QA review, and validated migration planning.</p></div>
+      <div>
+        <span class="tag">Next only after Phase 0 gates</span>
+        <h3>Phase 1 · Local foundation, credentials, persistence, and diagnostics</h3>
+        <p>Build the controlled local application foundation: configuration, database persistence, exchange-account setup, credential handling posture, diagnostics, and readiness checks.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Local app shell and settings workflow</li><li>SQLite persistence and migration readiness</li><li>Coinbase portfolio/account selection</li><li>API permission verification and diagnostics</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>View + trade permission only</li><li>No withdrawal scope</li><li>Sandbox-first environment default</li><li>Readiness checks before unlock</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Live trading automation</li><li>Public user onboarding</li><li>Analytics, beta forms, or production deployment</li></ul></div>
+        </div>
+      </div>
     </article>
+
     <article class="roadmap-card">
       <div class="phase-index">2</div>
-      <div><span class="tag">Later</span><h3>Private validation and sandbox proving</h3><p>Strategy proof, sandbox behavior, reporting, risk controls, and operator workflows must be validated before any public beta process.</p></div>
+      <div>
+        <span class="tag">Signal spine and strategy contracts</span>
+        <h3>Phase 2 · Market data, indicators, screener, strategy contracts, and watchdogs</h3>
+        <p>Develop the internal market-data and strategy-evaluation spine while keeping AI/news/sentiment advisory only and preserving deterministic risk authority.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Coinbase Spot market data ingestion</li><li>Indicator pipeline and candidate screener</li><li>Strategy contract definitions</li><li>AccountSafetyWatchdog and system-state monitoring</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>Data integrity checks</li><li>Strategy eligibility placeholders</li><li>Watchdog status visibility</li><li>Advisory context remains non-executing</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>AI-triggered trades</li><li>News/sentiment bypass of RiskManager</li><li>External framework live-eligibility grants</li></ul></div>
+        </div>
+      </div>
     </article>
+
     <article class="roadmap-card">
       <div class="phase-index">3</div>
-      <div><span class="tag">Future</span><h3>Public beta and commercial pathway review</h3><p>Any beta enrollment, analytics activation, investor communications, or commercial workflow requires separate approval and compliance review.</p></div>
+      <div>
+        <span class="tag">Risk and proof engine</span>
+        <h3>Phase 3 · Risk engine, sandbox broker, order lifecycle, and canonical backtester</h3>
+        <p>Implement and validate the core proof systems: deterministic backtesting, sandbox order lifecycle, risk budget, drawdown persistence, cooldowns, and one-active-trade enforcement.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Internal canonical backtester</li><li>Sandbox broker/order lifecycle</li><li>Daily/weekly drawdown persistence</li><li>One-active-trade enforcement and partial index</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>Backtesting before trust</li><li>Sandbox before live capital</li><li>Proof status before eligibility</li><li>Guardrail audit logging</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Production live-capital automation</li><li>Commercial beta access</li><li>Performance claims based on mockups or tests</li></ul></div>
+        </div>
+      </div>
     </article>
+
+    <article class="roadmap-card">
+      <div class="phase-index">4</div>
+      <div>
+        <span class="tag">Live-hardening review</span>
+        <h3>Phase 4 · Live execution hardening after deterministic simulation</h3>
+        <p>Prepare live execution only after deterministic simulation, sandbox behavior, risk controls, and operator intervention paths are hardened and reviewed.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Live broker boundary review</li><li>Emergency stop and kill-switch workflow</li><li>Order reconciliation and failure handling</li><li>Production-floor safety rules</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>Minimum equity and readiness conditions</li><li>RiskManager and watchdog pass state</li><li>Live eligibility cannot be created by AI/news</li><li>Operator acknowledgement of risk</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Unreviewed live-capital use</li><li>Multi-position expansion</li><li>Custody or withdrawal capability</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="roadmap-card">
+      <div class="phase-index">5</div>
+      <div>
+        <span class="tag">Operator cockpit</span>
+        <h3>Phase 5 · Operator cockpit UI and progressive unlock workflow</h3>
+        <p>Build the user-facing cockpit around the approved UI authority: Dashboard, Live Trading, Strategies, Backtesting, Risk Center, Reporting, and Settings.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Dashboard risk/readiness view</li><li>Live Trading embedded screener and chart</li><li>Strategy proof and Backtesting surfaces</li><li>Risk Center, Reporting, and Settings workflows</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>Progressive unlock requirements</li><li>Decision logs and audit trail visibility</li><li>Emergency controls remain prominent</li><li>No retired standalone Screener/Charts/AI pages</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>UI shortcuts around guardrails</li><li>Hidden live-trading enablement</li><li>Public product-download workflow</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="roadmap-card">
+      <div class="phase-index">6</div>
+      <div>
+        <span class="tag">Advisory context and support layer</span>
+        <h3>Phase 6 · Advisory context, alerts, deployment packaging, and operator support</h3>
+        <p>Add non-executing advisory context, alerting, exportable evidence, deployment packaging, and operator-support readiness without weakening trading authority boundaries.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>AI/news/sentiment advisory panels</li><li>Alerts and operator notification flow</li><li>Export/reporting packages</li><li>Installer/deployment readiness and support materials</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>Advisory-only enforcement</li><li>No provider can open trades</li><li>Support docs and risk disclosures ready</li><li>Security and privacy review before public intake</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Provider-driven execution</li><li>Unapproved analytics activation</li><li>Public beta signup or account onboarding</li></ul></div>
+        </div>
+      </div>
+    </article>
+
+    <article class="roadmap-card">
+      <div class="phase-index">7</div>
+      <div>
+        <span class="tag">Later · commercial and compliance review</span>
+        <h3>Phase 7 · Commercialization, beta, compliance, and funding-pathway review</h3>
+        <p>Evaluate whether the project is ready for controlled beta, public communications, commercialization planning, compliance review, and any funding pathway after product and safety gates mature.</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px">
+          <div><strong>Key workstreams</strong><ul class="clean"><li>Controlled beta readiness review</li><li>Legal/compliance review and public communications policy</li><li>Commercial packaging and support model</li><li>Funding-pathway review only if separately authorized</li></ul></div>
+          <div><strong>Authorization gates</strong><ul class="clean"><li>No beta without security and onboarding readiness</li><li>No financing language without legal process</li><li>No performance claims or implied results</li><li>Separate approval for any public intake workflow</li></ul></div>
+          <div><strong>Not yet allowed</strong><ul class="clean"><li>Public investment solicitation</li><li>Public beta enrollment on this interim site</li><li>Claims that concept imagery is released software</li></ul></div>
+        </div>
+      </div>
+    </article>
+
   </div>
  </div>
 </section>
 
 <section>
  <div class="wrap">
-  <div class="notice"><strong>Roadmap boundary:</strong> Dates, features, and sequencing remain subject to engineering, testing, security review, legal review, and funding decisions. Nothing on this page is a product availability commitment.</div>
+  <div class="notice"><strong>Roadmap boundary:</strong> This roadmap is directional and phase-gated. Dates, phase sequencing, scope, features, beta timing, commercial plans, and funding-pathway decisions remain subject to engineering progress, security review, legal review, testing evidence, and explicit approval. Nothing on this page is product availability, investment advice, a securities offering, beta enrollment, trading advice, or a performance claim.</div>
  </div>
 </section>
 </main>
