@@ -1,0 +1,147 @@
+name: Deploy V7.3 Rebuilt Interface Mockups
+
+on:
+  push:
+    paths:
+      - '.github/workflows/deploy-v7-3-interface-mockups.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-interface-mockups:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Generate rebuilt interface mockups
+        run: |
+          python3 <<'PY'
+          from pathlib import Path
+          import base64, re
+
+          root = Path('.')
+          assets = root / 'assets'
+          interface = root / 'interface' / 'index.html'
+          logo_path = assets / 'intellibot-emblem.png'
+          if not logo_path.exists():
+              raise SystemExit('Missing approved logo: assets/intellibot-emblem.png')
+          logo = 'data:image/png;base64,' + base64.b64encode(logo_path.read_bytes()).decode('ascii')
+
+          W, H, NAV = 1536, 864, 190
+          footer = 'CONCEPT INTERFACE DIRECTION ONLY • NOT LIVE SOFTWARE • NOT TRADING DATA • NOT PERFORMANCE EVIDENCE • SUBJECT TO CHANGE'
+          pages = [
+              ('dashboard','Dashboard','Risk-first readiness cockpit'),
+              ('live-trading','Live Trading','Candidate review and constrained execution'),
+              ('strategies','Strategies','Proof status and strategy eligibility'),
+              ('backtesting','Backtesting','Validation runs and scenario evidence'),
+              ('risk-center','Risk Center','Guardrails, drawdown, and account safety'),
+              ('reporting','Reporting','Decision forensics and exportable records'),
+              ('settings','Settings','Environment, providers, security, readiness'),
+          ]
+          nav_items = ['Dashboard','Live Trading','Strategies','Backtesting','Risk Center','Reporting','Settings']
+
+          def esc(s):
+              return str(s).replace('&','&amp;').replace('<','&lt;').replace('>','&gt;').replace('"','&quot;')
+
+          defs = '''<defs>
+          <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#030b16"/><stop offset=".48" stop-color="#06182a"/><stop offset="1" stop-color="#020711"/></linearGradient>
+          <linearGradient id="panel" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#071a2d"/><stop offset="1" stop-color="#03101f"/></linearGradient>
+          <linearGradient id="card" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0a263e"/><stop offset="1" stop-color="#051525"/></linearGradient>
+          <linearGradient id="active" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#0d5590"/><stop offset="1" stop-color="#13d9ff" stop-opacity=".22"/></linearGradient>
+          <style>.top{font:800 18px Inter,Segoe UI,Arial;letter-spacing:2.6px;fill:#19e4ff}.brand{font:800 31px Inter,Segoe UI,Arial;fill:#f3f8ff}.sub{font:700 12px Inter,Segoe UI,Arial;letter-spacing:1px;fill:#aab9ca}.title{font:800 30px Inter,Segoe UI,Arial;fill:#f4fbff}.muted{font:13px Inter,Segoe UI,Arial;fill:#9fb1c6}.nav{font:700 14px Inter,Segoe UI,Arial}.pt{font:800 17px Inter,Segoe UI,Arial;fill:#eaf6ff}.sm{font:12px Inter,Segoe UI,Arial;fill:#9fb1c6}.lab{font:800 12px Inter,Segoe UI,Arial;letter-spacing:.7px;fill:#b7c6d8}.met{font:800 31px Inter,Segoe UI,Arial}.state{font:800 22px Inter,Segoe UI,Arial;fill:#13d9ff}.tiny{font:10px Inter,Segoe UI,Arial;fill:#8094aa}.foot{font:12px Inter,Segoe UI,Arial;letter-spacing:.5px;fill:#91a2b8}</style>
+          </defs>'''
+
+          def metric(x,y,w,h,label,value,sub='',color='#13d9ff'):
+              return f'<g><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" fill="url(#card)" stroke="rgba(19,217,255,.22)"/><text x="{x+18}" y="{y+28}" class="lab">{esc(label)}</text><text x="{x+18}" y="{y+64}" class="met" fill="{color}">{esc(value)}</text><text x="{x+18}" y="{y+92}" class="sm">{esc(sub)}</text></g>'
+          def panel(x,y,w,h,title,body=''):
+              return f'<g><rect x="{x}" y="{y}" width="{w}" height="{h}" rx="16" fill="url(#panel)" stroke="rgba(19,217,255,.20)"/><text x="{x+22}" y="{y+34}" class="pt">{esc(title)}</text><text x="{x+22}" y="{y+62}" class="sm">{esc(body)}</text></g>'
+          def bar(x,y,w,label,pct):
+              return f'<g><text x="{x}" y="{y}" class="sm">{esc(label)}</text><rect x="{x}" y="{y+12}" width="{w}" height="8" rx="4" fill="rgba(255,255,255,.08)"/><rect x="{x}" y="{y+12}" width="{int(w*pct)}" height="8" rx="4" fill="#13d9ff"/></g>'
+
+          def nav(active):
+              out=''; y=112
+              icons=['⌂','↗','◇','▣','⬡','☷','⚙']
+              for i,n in enumerate(nav_items):
+                  a=n==active; fill='url(#active)' if a else 'transparent'; color='#eef7ff' if a else '#b9c8d9'; ic='#13d9ff' if a else '#d7e7f7'
+                  out += f'<g><rect x="18" y="{y-31}" width="154" height="48" rx="12" fill="{fill}" stroke="rgba(19,217,255,.28)"/><text x="37" y="{y}" font-size="24" fill="{ic}">{icons[i]}</text><text x="67" y="{y}" class="nav" fill="{color}">{i+1}. {esc(n)}</text></g>'
+                  y += 54
+              return out
+
+          def common(title, subtitle):
+              return f'<text x="18" y="23" class="top">CONCEPT UI PREVIEW • ILLUSTRATIVE ONLY</text><image href="{logo}" x="28" y="45" width="54" height="54" preserveAspectRatio="xMidYMid meet"/><text x="92" y="74" class="brand">IntelliBot</text><text x="94" y="95" class="sub">RISK-FIRST TRADING</text><text x="248" y="82" class="title">{esc(title)}</text><text x="248" y="106" class="muted">{esc(subtitle)}</text><line x1="190" y1="0" x2="190" y2="864" stroke="rgba(19,217,255,.15)"/><text x="20" y="802" class="tiny">TT-169 V2.8</text><text x="768" y="844" class="foot" text-anchor="middle">{esc(footer)}</text>'
+
+          def body(key):
+              x=224; y=128; c=''
+              if key=='dashboard':
+                  c+=metric(x,y,250,120,'READINESS','SANDBOX READY','No live-capital authorization','#32e6a5')+metric(x+270,y,250,120,'BOT STATE','WAITING','Risk gates are closed','#ffb032')+metric(x+540,y,250,120,'ACTIVE TRADES','0 / 1','One-active-trade enforced')+metric(x+810,y,250,120,'API HEALTH','HEALTHY','View + trade scope only','#32e6a5')
+                  c+=panel(x,y+145,520,250,'Decision Log','Latest operator and safety events')+panel(x+545,y+145,515,250,'Market Context','Session awareness and candidate quality')
+                  for i,p in enumerate([.68,.41,.82,.30]): c+=bar(x+570,y+200+i*44,440,['Liquidity','Trend Strength','Volatility Fit','News Risk'][i],p)
+                  c+=panel(x,y+420,1060,190,'Readiness Summary','All values are illustrative placeholders only')+f'<text x="{x+28}" y="{y+480}" class="state">Risk first. Proof first. One trade at a time.</text>'
+              elif key=='live-trading':
+                  c+=panel(x,y,410,560,'Candidate Screener','Tradable Coinbase Spot pairs')
+                  for i,r in enumerate(['BTC-USD   WATCH   score 0.82','ETH-USD   WATCH   score 0.77','SOL-USD   WAIT    score 0.61','LINK-USD  WAIT    score 0.58','XLM-USD   BLOCKED score 0.41']): c+=f'<rect x="{x+22}" y="{y+42+i*58}" width="360" height="44" rx="12" fill="rgba(255,255,255,.035)"/><text x="{x+38}" y="{y+70+i*58}" class="sm">{r}</text>'
+                  c+=panel(x+435,y,625,270,'Integrated Chart','Entry review before execution')+panel(x+435,y+295,300,265,'Guardrails','No order can bypass risk')+panel(x+760,y+295,300,265,'Active Position','None')
+                  c+=f'<polyline points="{x+470},{y+220} {x+540},{y+175} {x+610},{y+195} {x+690},{y+145} {x+760},{y+160} {x+840},{y+110} {x+1000},{y+135}" fill="none" stroke="#13d9ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/><text x="{x+790}" y="{y+390}" class="met" fill="#32e6a5">0 / 1</text>'
+              elif key=='strategies':
+                  c+=panel(x,y,1060,130,'Strategy Proof Matrix','Eligibility is earned, not assumed')
+                  for i,r in enumerate(['Opening Range Breakout     Proof status: REVIEW     Session fit','Support / Resistance Ratchet     Proof status: PROVING     Pullback fit','Momentum + Volume Spike     Proof status: LOCKED     High-volatility caution','VWAP / EMA Continuation     Proof status: WATCH     Trend fit']): c+=f'<rect x="{x}" y="{y+170+i*92}" width="1060" height="72" rx="16" fill="url(#card)" stroke="rgba(19,217,255,.20)"/><text x="{x+26}" y="{y+202+i*92}" class="pt">{esc(r)}</text><text x="{x+26}" y="{y+225+i*92}" class="sm">Activation requires backtest evidence, regime compatibility, and risk-profile alignment.</text>'
+              elif key=='backtesting':
+                  c+=panel(x,y,500,245,'Validation Run','Internal backtester is canonical')+metric(x+535,y,250,110,'PROOF STATUS','REVIEW','Not live eligible','#ffb032')+metric(x+810,y,250,110,'DATA QUALITY','CHECKED','Synthetic markers visible')+panel(x,y+270,1060,310,'Equity / Drawdown Review','Illustrative chart only')
+                  c+=f'<polyline points="{x+40},{y+530} {x+140},{y+490} {x+260},{y+505} {x+380},{y+440} {x+520},{y+470} {x+650},{y+395} {x+820},{y+420} {x+1010},{y+345}" fill="none" stroke="#13d9ff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>'
+              elif key=='risk-center':
+                  c+=metric(x,y,250,120,'CURRENT PROFILE','BALANCED','Sandbox active')+metric(x+270,y,250,120,'DAILY DRAWDOWN','0.68%','of 1.50% limit')+metric(x+540,y,250,120,'WEEKLY DRAWDOWN','1.14%','of 3.00% limit')+metric(x+810,y,250,120,'ONE ACTIVE TRADE','ENFORCED','0 / 1 active','#32e6a5')+panel(x,y+150,520,250,'Guardrail Engine','Always-on constraints')+panel(x+545,y+150,515,250,'Entry Logic vs Risk Logic','Different purpose, same goal')+panel(x,y+425,1060,155,'Safety Event History','Recent events are illustrative placeholders only')
+              elif key=='reporting':
+                  c+=panel(x,y,1060,145,'Decision Forensics','Every trade path should be reviewable')+panel(x,y+175,515,365,'Trade History','Illustrative records only')+panel(x+545,y+175,515,365,'Export Readiness','Audit trail health')
+                  for i,p in enumerate([.92,.84,.77,.68]): c+=bar(x+575,y+240+i*58,430,['Log integrity','Strategy linkage','Risk evidence','Report completeness'][i],p)
+              elif key=='settings':
+                  c+=panel(x,y,515,235,'Exchange / Account Setup','Coinbase Spot-first configuration')+metric(x+545,y,250,110,'ENVIRONMENT','SANDBOX','Default safe mode')+metric(x+810,y,250,110,'API PERMISSIONS','VIEW + TRADE','No withdrawals','#32e6a5')+panel(x,y+265,335,280,'Provider Sources','AI/news/sentiment advisory')+panel(x+362,y+265,335,280,'Security Controls','Credential posture')+panel(x+724,y+265,336,280,'Readiness Checks','Before unlock')
+              return c
+
+          for key,title,subtitle in pages:
+              svg=f'<svg xmlns="http://www.w3.org/2000/svg" width="1536" height="864" viewBox="0 0 1536 864">{defs}<rect width="1536" height="864" fill="url(#bg)"/><g opacity=".28"><circle cx="1220" cy="60" r="240" fill="#13d9ff" opacity=".08"/><circle cx="1340" cy="780" r="300" fill="#0b78ff" opacity=".08"/></g>{common(title,subtitle)}{nav(title)}{body(key)}</svg>'
+              (assets/f'concept-ui-{key}.svg').write_text(svg, encoding='utf-8')
+
+          html = interface.read_text(encoding='utf-8')
+          for key,_,_ in pages:
+              html = re.sub(rf'(\.\./assets/concept-ui-{re.escape(key)}\.(?:png|svg))(?:\?v=[^\"]*)?', f'../assets/concept-ui-{key}.svg?v=7.3.0', html)
+          html = html.replace(' gallery-feature','')
+          html = html.replace('Each panel has been aligned to the approved IntelliBot emblem treatment.','Each panel has been fully rebuilt for consistent branding, uniform sizing, matching footer language, and the approved IntelliBot emblem treatment.')
+          interface.write_text(html, encoding='utf-8')
+
+          css_path=assets/'style.css'
+          css=css_path.read_text(encoding='utf-8')
+          css_add='''\n/* V7.3 rebuilt interface image hardening: SVG gallery assets render uniformly. */\n.gallery-enhanced .visual-panel,\n.gallery-enhanced .gallery-feature {\n  grid-column: auto !important;\n}\n.gallery-enhanced .concept-image {\n  aspect-ratio: 16 / 9;\n  object-fit: cover;\n  object-position: center;\n}\n'''
+          if 'V7.3 rebuilt interface image hardening' not in css: css_path.write_text(css.rstrip()+css_add, encoding='utf-8')
+
+          (root/'WEBSITE_V7_3_REBUILT_INTERFACE_MOCKUPS_NOTES.md').write_text('# IntelliBot Website V7.3 — Rebuilt Interface Mockups Notes\n\nV7.3 replaces the prior patched PNG interface mockups with fully rebuilt SVG interface mockups using consistent branding, uniform sizing, matching footer language, and embedded approved IntelliBot emblem artwork. The rebuilt mockups remain illustrative concept previews only.\n', encoding='utf-8')
+          rp=root/'README.md'; r=rp.read_text(encoding='utf-8')
+          note='\n\n## V7.3 rebuilt interface mockups\n\nWebsite V7.3 supersedes V7.2.2 for public website deployment. V7.3 replaces the previous patched PNG concept UI mockups with rebuilt SVG mockups. The Interface page references the rebuilt SVG assets for both thumbnail and enlarged modal views using `?v=7.3.0`.\n'
+          if '## V7.3 rebuilt interface mockups' not in r: rp.write_text(r.rstrip()+note, encoding='utf-8')
+          mp=root/'PUBLICATION_SAFETY_MANIFEST.md'; m=mp.read_text(encoding='utf-8')
+          mn='\n\n## V7.3 rebuilt interface mockups publication-safety note\n\nV7.3 is a visual consistency and branding-defect correction. Prototype images remain restricted to `/interface/`; no analytics, forms, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.\n'
+          if '## V7.3 rebuilt interface mockups publication-safety note' not in m: mp.write_text(m.rstrip()+mn, encoding='utf-8')
+
+          html = interface.read_text(encoding='utf-8')
+          src_refs = re.findall(r'src="([^"]*concept-ui-[^"]+\.(?:svg|png)(?:\?v=[^"]+)?)"', html)
+          full_refs = re.findall(r'data-full="([^"]*concept-ui-[^"]+\.(?:svg|png)(?:\?v=[^"]+)?)"', html)
+          if len(src_refs)!=7 or len(full_refs)!=7: raise SystemExit(f'Bad ref count: {len(src_refs)} src, {len(full_refs)} modal')
+          if not all('.svg?v=7.3.0' in ref for ref in src_refs+full_refs): raise SystemExit('Not all refs use .svg?v=7.3.0')
+          if 'gallery-feature' in html: raise SystemExit('gallery-feature still present')
+          for p in [root/'index.html', root/'product'/'index.html']:
+              if 'concept-ui-' in p.read_text(encoding='utf-8', errors='ignore'): raise SystemExit(f'prototype ref still present in {p}')
+          bad=assets/'intellibot-shield-badge-tt169-v8.png'
+          if bad.exists(): bad.unlink()
+          print('V7.3 rebuilt interface mockups generated and validated.')
+          PY
+      - name: Commit and push V7.3 rebuilt mockups
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add interface/index.html assets/style.css assets/concept-ui-*.svg README.md PUBLICATION_SAFETY_MANIFEST.md WEBSITE_V7_3_REBUILT_INTERFACE_MOCKUPS_NOTES.md
+          if git diff --cached --quiet; then
+            echo "No V7.3 changes to commit."
+          else
+            git commit -m "Deploy Website V7.3 rebuilt interface mockups"
+            git push
+          fi
