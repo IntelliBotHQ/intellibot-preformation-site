@@ -174,3 +174,11 @@ V7.3 replaces the previous patched PNG concept UI mockups with rebuilt SVG mocku
 ## V7.4 user-supplied interface mockup restoration
 
 Website V7.4 supersedes V7.3 for public website deployment. V7.4 restores the user-supplied high-fidelity interface mockup images and removes the generated SVG replacements from active use. The Interface page references the restored assets for both thumbnail and enlarged modal views using `?v=7.4.0`.
+
+## V7.4.1 roadmap Phase 0–7 detail restoration
+
+Website V7.4.1 supersedes V7.4 for public website deployment. V7.4.1 restores the detailed Roadmap phase structure from Phase 0 through Phase 7 while preserving the professional card/timeline presentation. No interface images, logo assets, DNS settings, GitHub Pages settings, beta workflows, analytics, investor funnel, product download, live trading access, or performance claims were changed.
+
+## V7.5 public product information guide release
+
+Website V7.5 supersedes V7.4.1 for public website deployment. V7.5 adds a dedicated `/documents/` page and hosts the PDF version of the IntelliBot Public Product Information Guide, Phase 0 Alpha Public Reference Edition, for public consumption. The document is informational only and does not activate beta enrollment, investor solicitation, analytics, product download, live trading access, credential collection, financing terms, or performance claims.

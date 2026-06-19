@@ -9,4 +9,11 @@
   <url><loc>https://intellibot.us/privacy/</loc></url>
   <url><loc>https://intellibot.us/terms/</loc></url>
   <url><loc>https://intellibot.us/contact/</loc></url>
+
+  <url>
+    <loc>https://intellibot.us/documents/</loc>
+  </url>
+  <url>
+    <loc>https://intellibot.us/documents/IntelliBot_Public_Product_Information_Guide_Phase0_Alpha.pdf</loc>
+  </url>
 </urlset>

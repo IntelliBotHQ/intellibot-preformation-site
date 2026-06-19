@@ -1,0 +1,1 @@
+Deploy by replacing/adding the included files. This release adds the public product guide PDF and documents page without changing DNS, GitHub Pages settings, Microsoft 365 records, interface images, logo files, beta status, analytics, investor status, product download, or live trading access.

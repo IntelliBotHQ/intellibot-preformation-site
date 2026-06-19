@@ -142,3 +142,21 @@ Publication-safety determination:
 ## V7.4 user-supplied interface mockup restoration publication-safety note
 
 V7.4 is a visual restoration and consistency correction. Prototype images remain restricted to `/interface/`; no analytics, forms, beta signup, investor funnel, product download, credential collection, live trading access, or performance claims were added.
+
+## V7.4.1 roadmap Phase 0–7 detail restoration publication-safety note
+
+V7.4.1 restores detailed public roadmap depth while preserving the pre-formation informational posture. The Roadmap page now lists Phase 0 through Phase 7 with purpose, workstreams, gates, and unauthorized activities. No beta signup, investor solicitation, analytics, product download, credential collection, live trading access, or performance claim was added.
+
+## V7.5 public product information guide publication-safety note
+
+V7.5 adds a public `/documents/` page and hosts the PDF version of the IntelliBot Public Product Information Guide, Phase 0 Alpha Public Reference Edition.
+
+Publication-safety determination:
+
+- The guide is informational only.
+- The guide is not investment advice.
+- The guide is not a performance claim.
+- The guide is not a beta invitation.
+- The guide is not a product download or account-connection workflow.
+- The guide is not a securities offering or public financing solicitation.
+- No analytics, forms, investor funnel, live trading access, credential collection, or product activation flow was added.
